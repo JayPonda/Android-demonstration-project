@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:gravity="center"
+    android:padding="@dimen/header_padding"
+    android:background="@color/purple_200"
+    android:orientation="vertical">
+
+    <com.makeramen.roundedimageview.RoundedImageView
+        android:id="@+id/imageView"
+        android:layout_width="@dimen/header_image_dim"
+        android:layout_height="@dimen/header_image_dim"
+        android:scaleType="centerCrop"
+        android:src="@drawable/header_image"
+        app:riv_corner_radius="@dimen/image_rad"
+        android:contentDescription="@string/sidebar_image" />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="10dp"
+        android:fontFamily="sans-serif-black"
+        android:gravity="center"
+        android:text="@string/mobile_application_development"
+        android:textColor="#301565"
+        android:textSize="22sp" />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:fontFamily="sans-serif-condensed"
+        android:gravity="center"
+        android:text="@string/lab_practicals"
+        android:textColor="#040012"
+        android:textSize="18sp" />
+</LinearLayout>

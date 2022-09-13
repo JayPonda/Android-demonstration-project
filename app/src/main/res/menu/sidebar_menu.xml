@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <group android:checkableBehavior="single">
+
+        <item android:title="@string/layouts_and_scrollable" >
+
+            <menu>
+
+                <item
+                    android:id="@+id/practical01"
+                    android:icon="@drawable/ic_baseline_filter_frames_24"
+                    android:title="@string/dialog_message"/>
+
+                <item
+                    android:id="@+id/practical02"
+                    android:icon="@drawable/ic_baseline_grid_on_24"
+                    android:title="@string/grid_view"/>
+
+                <item
+                    android:id="@+id/practical03"
+                    android:icon="@drawable/ic_baseline_view_list_24"
+                    android:title="@string/list_view"/>
+
+                <item
+                    android:id="@+id/practical05"
+                    android:icon="@drawable/ic_baseline_rotate_right_24"
+                    android:title="@string/recycler_view"/>
+
+                <item
+                    android:id="@+id/practical06"
+                    android:icon="@drawable/ic_baseline_swap_horiz_24"
+                    android:title="@string/scroll_view"/>
+
+            </menu>
+        </item>
+    </group>
+
+    <item
+        android:id="@+id/practical04"
+        android:icon="@drawable/ic_baseline_list_alt_24"
+        android:title="@string/todo_list"/>
+
+    <group android:checkableBehavior="single">
+
+        <item android:title="@string/services_and_storage" >
+
+            <menu>
+
+                <item
+                    android:id="@+id/practical07"
+                    android:icon="@drawable/ic_baseline_email_24"
+                    android:title="@string/send_email"/>
+
+                <item
+                    android:id="@+id/practical08"
+                    android:icon="@drawable/ic_baseline_filter_frames_24"
+                    android:title="@string/send_sms"/>
+
+                <item
+                    android:id="@+id/practical09"
+                    android:icon="@drawable/ic_baseline_storage_24"
+                    android:title="@string/shared_preferences"/>
+
+                <item
+                    android:id="@+id/practical10"
+                    android:icon="@drawable/ic_baseline_local_fire_department_24"
+                    android:title="@string/firebase_example"/>
+
+            </menu>
+        </item>
+    </group>
+
+    <item
+        android:id="@+id/practical11"
+        android:icon="@drawable/ic_baseline_message_24"
+        android:title="@string/local_notification"/>
+
+    <item
+        android:id="@+id/practical12"
+        android:icon="@drawable/ic_baseline_web_24"
+        android:title="@string/web_view"/>
+
+</menu>

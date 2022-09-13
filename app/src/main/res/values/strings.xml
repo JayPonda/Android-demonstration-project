@@ -1,8 +1,30 @@
 <resources>
     <string name="app_name">LabPracticals</string>
 
-    <!-- main activity button string -->
+    <!-- main activity drawer item string -->
     <string name="dialog_message">Dialog Message</string>
+    <string name="grid_view">grid view</string>
+    <string name="list_view">list view</string>
+    <string name="todo_list">todo list</string>
+    <string name="basics">Basics</string>
+    <string name="advance">Advance</string>
+    <string name="recycler_view">recycler view</string>
+    <string name="layouts_and_scrollable">layouts and scrollable</string>
+    <string name="services_and_storage">services and storage</string>
+    <string name="send_email">send email</string>
+    <string name="send_sms">send sms</string>
+    <string name="shared_preferences">shared preferences</string>
+    <string name="firebase_example">firebase example</string>
+    <string name="local_notification">local notification</string>
+    <string name="web_view">web view</string>
+    <string name="sidebar_image">sidebar image</string>
+    <string name="mobile_application_development">Mobile Application Development</string>
+    <string name="lab_practicals">lab practicals</string>
+
+    <!-- drawer status -->
+    <string name="drawer_open">drawer open</string>
+    <string name="drawer_close">drawer close</string>
+    <string name="scroll_view">scroll view</string>
 
     <!-- practical 1 String -->
 </resources>

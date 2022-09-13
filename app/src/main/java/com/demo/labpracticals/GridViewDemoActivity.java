@@ -9,12 +9,12 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.widget.TextView;
 
-public class DialogMessage extends AppCompatActivity {
+public class GridViewDemoActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_dialog_message);
+        setContentView(R.layout.activity_grid_view);
 
         Intent intent = getIntent();
         int it = intent.getIntExtra(DATA_VALUE, -1);
