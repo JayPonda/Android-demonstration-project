@@ -3,6 +3,7 @@ package com.demo.labpracticals;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.ActionBarDrawerToggle;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.core.view.GravityCompat;
 import androidx.drawerlayout.widget.DrawerLayout;
 
 import android.content.Intent;
@@ -24,18 +25,18 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
     protected DrawerLayout drawerLayout;
     protected NavigationView navigationView;
     protected Map<Integer, Class<?>> activityRefMap = Map.ofEntries(
-            Map.entry(R.id.practical01, DialogMessage.class),
+            Map.entry(R.id.practical01, DialogMessageDemoActivity.class),
             Map.entry(R.id.practical02, GridViewDemoActivity.class),
             Map.entry(R.id.practical03, ListViewDemoActivity.class),
-            Map.entry(R.id.practical04, TodoListDemoView.class),
-            Map.entry(R.id.practical05, RecyclerViewDemoView.class),
+            Map.entry(R.id.practical04, TodoListDemoActivity.class),
+            Map.entry(R.id.practical05, RecyclerViewDemoActivity.class),
             Map.entry(R.id.practical06, ScrollViewDemoActivity.class),
-            Map.entry(R.id.practical07, DialogMessage.class),
-            Map.entry(R.id.practical08, DialogMessage.class),
-            Map.entry(R.id.practical09, DialogMessage.class),
-            Map.entry(R.id.practical10, DialogMessage.class),
-            Map.entry(R.id.practical11, DialogMessage.class),
-            Map.entry(R.id.practical12, DialogMessage.class)
+            Map.entry(R.id.practical07, DialogMessageDemoActivity.class),
+            Map.entry(R.id.practical08, DialogMessageDemoActivity.class),
+            Map.entry(R.id.practical09, DialogMessageDemoActivity.class),
+            Map.entry(R.id.practical10, DialogMessageDemoActivity.class),
+            Map.entry(R.id.practical11, DialogMessageDemoActivity.class),
+            Map.entry(R.id.practical12, DialogMessageDemoActivity.class)
     );
 
     @Override
@@ -55,10 +56,8 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         navigationView.setNavigationItemSelectedListener(this);
         Objects.requireNonNull(getSupportActionBar()).setDisplayHomeAsUpEnabled(true);
 
-        activityMainBinding.practical1.setOnClickListener(v -> {
-            Intent intent = new Intent(MainActivity.this, DialogMessage.class);
-            startActivity(intent);
-        });
+        String myText = "hello from " + this.getClass().getName();
+        activityMainBinding.textView.setText(myText);
     }
 
     @Override
@@ -76,6 +75,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         assert selectedElm != null;
         intent.putExtra(DATA_VALUE, item.getItemId());
         intent.putExtra(CLASS_NAME, selectedElm.getName());
+        drawerLayout.closeDrawer(GravityCompat.START);
         startActivity(intent);
         return false;
     }

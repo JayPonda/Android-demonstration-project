@@ -14,23 +14,47 @@
         android:theme="@style/Theme.LabPracticals"
         tools:targetApi="31">
         <activity
+            android:name=".WebViewDemoActivity"
+            android:exported="false" />
+        <activity
+            android:name=".LocalNotificationDemoActivity"
+            android:exported="false" />
+        <activity
+            android:name=".FireBaseDemoActivity"
+            android:exported="false" />
+        <activity
+            android:name=".SharedPreferencesDemoActivity"
+            android:exported="false" />
+        <activity
+            android:name=".SendSmsDemoActivity"
+            android:exported="false" />
+        <activity
+            android:name=".SendEmailDemoActivity"
+            android:exported="false" />
+        <activity
             android:name=".ScrollViewDemoActivity"
-            android:exported="false" />
+            android:exported="false"
+            android:label="@string/scroll_view" />
         <activity
-            android:name=".RecyclerViewDemoView"
-            android:exported="false" />
+            android:name=".RecyclerViewDemoActivity"
+            android:exported="false"
+            android:label="@string/recycler_view" />
         <activity
-            android:name=".TodoListDemoView"
-            android:exported="false" />
+            android:name=".TodoListDemoActivity"
+            android:exported="false"
+            android:label="@string/todo_list" />
         <activity
             android:name=".ListViewDemoActivity"
-            android:exported="false" />
+            android:exported="false"
+            android:label="@string/list_view" />
         <activity
             android:name=".GridViewDemoActivity"
-            android:exported="false" />
+            android:exported="false"
+            android:label="@string/grid_view" />
         <activity
-            android:name=".DialogMessage"
-            android:exported="false" />
+            android:name=".DialogMessageDemoActivity"
+            android:exported="false"
+            android:label="@string/dialog_message" />
         <activity
             android:name=".MainActivity"
             android:exported="true">

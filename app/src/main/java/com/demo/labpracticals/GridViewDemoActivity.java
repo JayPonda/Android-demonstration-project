@@ -3,18 +3,22 @@ package com.demo.labpracticals;
 import static com.demo.labpracticals.MainActivity.CLASS_NAME;
 import static com.demo.labpracticals.MainActivity.DATA_VALUE;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.view.MenuItem;
 import android.widget.TextView;
+
+import java.util.Objects;
 
 public class GridViewDemoActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_grid_view);
+        setContentView(R.layout.activity_grid_view_demo);
 
         Intent intent = getIntent();
         int it = intent.getIntExtra(DATA_VALUE, -1);
@@ -22,5 +26,17 @@ public class GridViewDemoActivity extends AppCompatActivity {
         TextView text = findViewById(R.id.textView);
         str = str + " " + it;
         text.setText(str);
+
+        Objects.requireNonNull(getSupportActionBar()).setDisplayHomeAsUpEnabled(true);
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(@NonNull MenuItem item) {
+        if(item.getItemId() == android.R.id.home){
+            finish();
+            return true;
+        }
+
+        return super.onOptionsItemSelected(item);
     }
 }
