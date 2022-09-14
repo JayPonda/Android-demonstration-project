@@ -9,18 +9,18 @@ public class StaticData {
     private StaticData(){}
 
     private final Animals[] animalList = {
-            new Animals(R.drawable.animal01, "Deer"),
-            new Animals(R.drawable.animal02, "Giraffe"),
-            new Animals(R.drawable.animal03, "Peacock"),
-            new Animals(R.drawable.animal04, "Fish"),
-            new Animals(R.drawable.animal05, "Lion"),
-            new Animals(R.drawable.animal06, "Tiger"),
-            new Animals(R.drawable.animal07, "Elephant"),
-            new Animals(R.drawable.animal08, "Parrot"),
-            new Animals(R.drawable.animal09, "Fox"),
-            new Animals(R.drawable.animal10, "Squirrel"),
-            new Animals(R.drawable.animal11, "Chameleon"),
-            new Animals(R.drawable.animal12, "Chimpanzee")
+            new Animals(R.drawable.animal01, "Deer", "Deer is a wild animal that belongs to the Cervidae family"),
+            new Animals(R.drawable.animal02, "Giraffe", "Giraffes are the world's tallest mammals, thanks to their towering legs and long necks"),
+            new Animals(R.drawable.animal03, "Peacock", "Peacocks, also known as “peafowl, are large colorful birds that live in India and Asia"),
+            new Animals(R.drawable.animal04, "Fish", "Fish are aquatic vertebrate animals that have gills but lack limbs with digits, like fingers or toes"),
+            new Animals(R.drawable.animal05, "Lion", "Lions have strong, compact bodies and powerful forelegs, teeth and jaws for pulling down and killing prey"),
+            new Animals(R.drawable.animal06, "Tiger", "The tiger has a muscular body with strong forelimbs, a large head and a tail that is about half the length of its body"),
+            new Animals(R.drawable.animal07, "Elephant", "Elephants are the largest land mammals on earth and have distinctly massive bodies, large ears, and long trunks"),
+            new Animals(R.drawable.animal08, "Parrot", "Characteristic features of parrots include a strong, curved bill, an upright stance, strong legs, and clawed zygodactyl feet"),
+            new Animals(R.drawable.animal09, "Fox", "Foxes are small to medium-sized, omnivorous mammals belonging to several genera of the family Canidae"),
+            new Animals(R.drawable.animal10, "Squirrel", "Squirrels are generally small rodents with slender bodies, bushy tails and large eyes"),
+            new Animals(R.drawable.animal11, "Chameleon", "Most chameleons, however, are 17–25 cm (7–10 inches) long. The body is laterally compressed, the tail is sometimes curled, and the bulged eyes move independently of one another"),
+            new Animals(R.drawable.animal12, "Chimpanzee", "The characteristic chimpanzee shape includes arms that extend beyond the knees, opposable thumbs, and a prominent mouth")
     };
 
     public static StaticData getInstance(){

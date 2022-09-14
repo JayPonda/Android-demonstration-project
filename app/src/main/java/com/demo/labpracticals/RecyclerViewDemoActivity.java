@@ -1,33 +1,34 @@
 package com.demo.labpracticals;
 
-import static com.demo.labpracticals.MainActivity.CLASS_NAME;
-import static com.demo.labpracticals.MainActivity.DATA_VALUE;
-
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
-
-import android.content.Intent;
+import androidx.recyclerview.widget.LinearLayoutManager;
 import android.os.Bundle;
 import android.view.MenuItem;
-import android.widget.TextView;
+import com.demo.labpracticals.adapter.RecyclerViewAdapter;
+import com.demo.labpracticals.data.Animals;
+import com.demo.labpracticals.data.StaticData;
+import com.demo.labpracticals.databinding.ActivityRecyclerViewDemoBinding;
 
 import java.util.Objects;
 
 public class RecyclerViewDemoActivity extends AppCompatActivity {
 
+    ActivityRecyclerViewDemoBinding binding;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_recycler_view_demo);
-
-        Intent intent = getIntent();
-        int it = intent.getIntExtra(DATA_VALUE, -1);
-        String str = intent.getStringExtra(CLASS_NAME);
-        TextView text = findViewById(R.id.textView);
-        str = str + " " + it;
-        text.setText(str);
+        binding = ActivityRecyclerViewDemoBinding.inflate(getLayoutInflater());
+        setContentView(binding.getRoot());
+        Animals[] animals = StaticData.getInstance().getAnimalList(10);
 
         Objects.requireNonNull(getSupportActionBar()).setDisplayHomeAsUpEnabled(true);
+
+        binding.revyvlerViewComp.setLayoutManager(
+                new LinearLayoutManager(this, LinearLayoutManager.VERTICAL, false)
+        );
+        binding.revyvlerViewComp.setAdapter(new RecyclerViewAdapter(animals));
     }
 
     @Override

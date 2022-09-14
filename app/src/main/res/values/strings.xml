@@ -1,5 +1,6 @@
 <resources>
     <string name="app_name">Lab Practicals</string>
+    <string name="image_disc">image description</string>
 
     <!-- main activity drawer item string -->
     <string name="layouts_and_scrollable">layouts and scrollable</string>
