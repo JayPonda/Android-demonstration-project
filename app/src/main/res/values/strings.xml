@@ -32,5 +32,21 @@
     <string name="cancel">Cancel</string>
     <string name="the_other_one">Other</string>
 
+    <!-- practical 3: List View String -->
+    <string-array name="animalList">
+        <item>Deer</item>
+        <item>Giraffe</item>
+        <item>Peacock</item>
+        <item>Fish</item>
+        <item>Lion</item>
+        <item>Tiger</item>
+        <item>Elephant</item>
+        <item>Parrot</item>
+        <item>Fox</item>
+        <item>Squirrel</item>
+        <item>Chameleon</item>
+        <item>Chimpanzee</item>
+    </string-array>
+
 
 </resources>

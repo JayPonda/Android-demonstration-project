@@ -1,33 +1,39 @@
 package com.demo.labpracticals;
-
-import static com.demo.labpracticals.MainActivity.CLASS_NAME;
-import static com.demo.labpracticals.MainActivity.DATA_VALUE;
-
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
-import android.content.Intent;
 import android.os.Bundle;
 import android.view.MenuItem;
-import android.widget.TextView;
+import android.widget.ArrayAdapter;
+import android.widget.Toast;
+
+import com.demo.labpracticals.databinding.ActivityListViewDemoBinding;
 
 import java.util.Objects;
 
 public class ListViewDemoActivity extends AppCompatActivity {
 
+    ActivityListViewDemoBinding binding;
+    Toast toast;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_list_view_demo);
+        binding = ActivityListViewDemoBinding.inflate(getLayoutInflater());
+        String[] animals = getResources().getStringArray(R.array.animalList);
 
-        Intent intent = getIntent();
-        int it = intent.getIntExtra(DATA_VALUE, -1);
-        String str = intent.getStringExtra(CLASS_NAME);
-        TextView text = findViewById(R.id.textView);
-        str = str + " " + it;
-        text.setText(str);
-
+        setContentView(binding.getRoot());
         Objects.requireNonNull(getSupportActionBar()).setDisplayHomeAsUpEnabled(true);
+
+        binding.listViewComp.setAdapter(
+                new ArrayAdapter<>(this, android.R.layout.simple_gallery_item, animals)
+        );
+        binding.listViewComp.setOnItemClickListener((parent, view, position, id) -> {
+            if(toast != null)
+                toast.cancel();
+            toast = Toast.makeText(this, animals[position], Toast.LENGTH_SHORT);
+            toast.show();
+        });
     }
 
     @Override
@@ -36,7 +42,6 @@ public class ListViewDemoActivity extends AppCompatActivity {
             finish();
             return true;
         }
-
         return super.onOptionsItemSelected(item);
     }
 }

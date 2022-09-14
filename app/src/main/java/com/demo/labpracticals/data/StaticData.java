@@ -4,7 +4,6 @@ import com.demo.labpracticals.R;
 import java.util.Arrays;
 import java.util.Random;
 
-
 public class StaticData {
     private static StaticData dataObj = null;
     private StaticData(){}
@@ -14,7 +13,7 @@ public class StaticData {
             new Animals(R.drawable.animal02, "Giraffe"),
             new Animals(R.drawable.animal03, "Peacock"),
             new Animals(R.drawable.animal04, "Fish"),
-            new Animals(R.drawable.animal05, "Line"),
+            new Animals(R.drawable.animal05, "Lion"),
             new Animals(R.drawable.animal06, "Tiger"),
             new Animals(R.drawable.animal07, "Elephant"),
             new Animals(R.drawable.animal08, "Parrot"),
@@ -23,8 +22,6 @@ public class StaticData {
             new Animals(R.drawable.animal11, "Chameleon"),
             new Animals(R.drawable.animal12, "Chimpanzee")
     };
-
-
 
     public static StaticData getInstance(){
         if(dataObj == null)
