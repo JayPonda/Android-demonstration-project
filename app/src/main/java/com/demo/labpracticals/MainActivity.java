@@ -56,6 +56,8 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         navigationView.setNavigationItemSelectedListener(this);
         Objects.requireNonNull(getSupportActionBar()).setDisplayHomeAsUpEnabled(true);
 
+        drawerLayout.openDrawer(GravityCompat.START);
+
         String myText = "hello from " + this.getClass().getName();
         activityMainBinding.textView.setText(myText);
     }
@@ -75,7 +77,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         assert selectedElm != null;
         intent.putExtra(DATA_VALUE, item.getItemId());
         intent.putExtra(CLASS_NAME, selectedElm.getName());
-        drawerLayout.closeDrawer(GravityCompat.START);
+        //drawerLayout.closeDrawer(GravityCompat.START);
         startActivity(intent);
         return false;
     }

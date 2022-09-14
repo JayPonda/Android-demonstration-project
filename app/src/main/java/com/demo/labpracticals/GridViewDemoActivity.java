@@ -1,33 +1,44 @@
 package com.demo.labpracticals;
 
-import static com.demo.labpracticals.MainActivity.CLASS_NAME;
-import static com.demo.labpracticals.MainActivity.DATA_VALUE;
-
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.recyclerview.widget.GridLayoutManager;
 
-import android.content.Intent;
+import android.app.Activity;
+import android.content.res.Configuration;
 import android.os.Bundle;
 import android.view.MenuItem;
-import android.widget.TextView;
 
+import com.demo.labpracticals.adapter.GridViewCustomAdapter;
+import com.demo.labpracticals.data.Animals;
+import com.demo.labpracticals.data.StaticData;
+import com.demo.labpracticals.databinding.ActivityGridViewDemoBinding;
+
+import java.util.Arrays;
+import java.util.List;
 import java.util.Objects;
 
 public class GridViewDemoActivity extends AppCompatActivity {
 
+    ActivityGridViewDemoBinding binding;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_grid_view_demo);
-
-        Intent intent = getIntent();
-        int it = intent.getIntExtra(DATA_VALUE, -1);
-        String str = intent.getStringExtra(CLASS_NAME);
-        TextView text = findViewById(R.id.textView);
-        str = str + " " + it;
-        text.setText(str);
-
+        binding = ActivityGridViewDemoBinding.inflate(getLayoutInflater());
+        setContentView(binding.getRoot());
         Objects.requireNonNull(getSupportActionBar()).setDisplayHomeAsUpEnabled(true);
+
+        int orientation = getResources().getConfiguration().orientation;
+        GridLayoutManager gridLayoutManager = new GridLayoutManager(
+                this,
+                orientation == Configuration.ORIENTATION_PORTRAIT ? 3 : 4,
+                GridLayoutManager.VERTICAL,
+                false);
+        binding.recyclerViewDemo.setLayoutManager(gridLayoutManager);
+        Animals[] animals = StaticData.getInstance().getAnimalList(5);
+        binding.recyclerViewDemo.setAdapter(new GridViewCustomAdapter(animals));
+
     }
 
     @Override
