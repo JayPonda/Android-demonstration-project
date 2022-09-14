@@ -5,11 +5,18 @@
     android:gravity="center_horizontal"
     android:orientation="vertical">
 
-    <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/recyclerViewDemo"
+    <GridView
+        android:id="@+id/gridBaseComp"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_margin="@dimen/small_padding" />
+        android:layout_margin="@dimen/small_padding"
+        android:horizontalSpacing="@dimen/small_padding"
+        android:verticalSpacing="@dimen/small_padding"
+        android:smoothScrollbar="true"
+        android:stretchMode="columnWidth"
+        android:gravity="center"
+        android:numColumns="3"
+        />
 
 </LinearLayout>
 
