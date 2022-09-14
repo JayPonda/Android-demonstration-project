@@ -1,31 +1,43 @@
 package com.demo.labpracticals;
 
-import static com.demo.labpracticals.MainActivity.CLASS_NAME;
-import static com.demo.labpracticals.MainActivity.DATA_VALUE;
-
 import androidx.annotation.NonNull;
+import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
-
-import android.content.Intent;
 import android.os.Bundle;
 import android.view.MenuItem;
-import android.widget.TextView;
+
+import com.demo.labpracticals.databinding.ActivityDialogMessageDemoBinding;
 
 import java.util.Objects;
 
 public class DialogMessageDemoActivity extends AppCompatActivity {
 
+    ActivityDialogMessageDemoBinding binding;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_dialog_message_demo);
+        binding = ActivityDialogMessageDemoBinding.inflate(getLayoutInflater());
+        setContentView(binding.getRoot());
 
-        Intent intent = getIntent();
-        int it = intent.getIntExtra(DATA_VALUE, -1);
-        String str = intent.getStringExtra(CLASS_NAME);
-        TextView text = findViewById(R.id.textView);
-        str = str + " " + it;
-        text.setText(str);
+        binding.button.setOnClickListener(v -> {
+            AlertDialog.Builder alertDialog = new AlertDialog.Builder(this);
+            alertDialog.setTitle("Dialog message demo")
+                    .setMessage("this is the demo of dialog message with three options. choose any one.")
+                    //.setPositiveButton(getString(R.string.ok), new DialogInterface.OnClickListener(){
+                    .setPositiveButton(
+                            getString(R.string.ok),
+                            (dialog, which) -> binding.alertState.setText(getString(R.string.ok)))
+                    .setNegativeButton(getString(
+                            R.string.cancel),
+                            (dialog, which) -> binding.alertState.setText(getString(R.string.cancel)))
+                    .setNeutralButton(
+                            getString(R.string.the_other_one),
+                            (dialog, which) -> binding.alertState.setText(getString(R.string.the_other_one)))
+                    .show();
+
+            alertDialog.create();
+        });
 
         Objects.requireNonNull(getSupportActionBar()).setDisplayHomeAsUpEnabled(true);
     }
