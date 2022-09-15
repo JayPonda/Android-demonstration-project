@@ -4,16 +4,50 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:padding="@dimen/general_padding"
     tools:context=".TodoListDemoActivity">
 
-    <TextView
-        android:id="@+id/textView"
-        android:layout_width="wrap_content"
+    <LinearLayout
+        android:id="@+id/formControls"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        app:layout_constraintBottom_toBottomOf="parent"
+        android:minHeight="@dimen/min_height"
+        android:orientation="horizontal"
+        android:paddingHorizontal="@dimen/small_padding"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent">
+
+        <EditText
+            android:id="@+id/todosFormElm"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="@dimen/small_padding"
+            android:layout_weight="1"
+            android:hint="@string/here_is_my_todo"
+            android:importantForAutofill="no"
+            android:inputType="text|textMultiLine"
+            android:minHeight="@dimen/min_height"
+            android:textColorHint="#757575" />
+
+        <Button
+            android:id="@+id/submitFormElm"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:text="@string/add" />
+
+    </LinearLayout>
+
+    <ListView
+        android:id="@+id/listViewTodos"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_marginTop="@dimen/small_padding"
+        android:divider="@color/purple_200"
+        android:dividerHeight="@dimen/divider_height"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="@+id/formControls"
+        app:layout_constraintStart_toStartOf="@+id/formControls"
+        app:layout_constraintTop_toBottomOf="@+id/formControls" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

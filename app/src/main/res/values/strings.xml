@@ -31,8 +31,14 @@
     <!-- practical 1: Dialog message String -->
     <string name="show_dialog_message">show dialog message</string>
     <string name="ok">OK</string>
+    <string name="yes_delete">Yes</string>
     <string name="cancel">Cancel</string>
     <string name="the_other_one">Other</string>
+
+    <!-- practical 4: todoList -->
+    <string name="add">Add</string>
+    <string name="edit">Edit</string>
+    <string name="here_is_my_todo">here is my todo</string>
 
     <!-- practical 3: List View String -->
     <string-array name="animalList">
