@@ -1,9 +1,141 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".SendEmailDemoActivity">
+    android:backgroundTint="#E4E4E4"
+    android:orientation="vertical">
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/customToolBar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:menu="@menu/email_functions"
+        app:subtitle="today's date"
+        app:title="status"
+        android:elevation="@dimen/small_padding"
+        app:titleTextColor="@color/purple_500" />
+
+    <TableLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:padding="@dimen/general_padding"
+        tools:context=".SendEmailDemoActivity">
+
+
+        <TableRow
+            android:visibility="gone"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/min_height">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:gravity="center"
+                android:padding="@dimen/small_padding"
+                android:text="@string/email"
+                android:textSize="16sp" />
+
+            <EditText
+                android:id="@+id/senderEmail"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginStart="@dimen/general_padding"
+                android:layout_weight="1"
+                android:ems="10"
+                android:hint="@string/sender_email_com"
+                android:autofillHints="emailAddress"
+                android:importantForAutofill="no"
+                android:inputType="textEmailAddress"
+                android:textColorHint="#757575"
+                android:minHeight="@dimen/min_height" />
+        </TableRow>
+
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:minHeight="@dimen/min_height">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:gravity="center"
+                android:padding="@dimen/small_padding"
+                android:text="@string/cc"
+                android:textSize="16sp" />
+
+            <EditText
+                android:id="@+id/receiverEmail"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginStart="@dimen/general_padding"
+                android:layout_weight="1"
+                android:ems="10"
+                android:hint="@string/Receiver_email"
+                android:inputType="textEmailAddress"
+                android:minHeight="@dimen/min_height"
+                android:textColorHint="#757575"
+                android:autofillHints="emailAddress"
+                android:importantForAutofill="noExcludeDescendants"/>
+
+            <ImageButton
+                android:id="@+id/VerifyEmail"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:backgroundTint="#E8E8E8"
+                android:contentDescription="@string/add_or_remove_cc"
+                app:srcCompat="@drawable/ic_baseline_verified_user_24"
+                app:tint="@color/teal_700"
+                tools:ignore="ImageContrastCheck" />
+        </TableRow>
+
+        <TableRow
+            android:layout_width="match_parent"
+            android:minHeight="@dimen/min_height"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:gravity="center"
+                android:padding="@dimen/small_padding"
+                android:text="@string/subject"
+                android:textSize="16sp" />
+
+            <EditText
+                android:id="@+id/emailSubject"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginStart="@dimen/general_padding"
+                android:layout_weight="1"
+                android:ems="10"
+                android:importantForAutofill="no"
+                android:hint="@string/subject_of_this_email"
+                android:inputType="text|textEmailSubject"
+                android:minHeight="@dimen/min_height"
+                android:textColorHint="#757575" />
+        </TableRow>
+
+
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1">
+
+            <MultiAutoCompleteTextView
+                android:id="@+id/emailBody"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:gravity="start|top"
+                android:maxLines="40"
+                android:minLines="20"
+                android:paddingHorizontal="@dimen/general_padding"
+                android:text="@string/dear_sir_n"
+                android:textColor="#757575" />
+        </TableRow>
+
+    </TableLayout>
+
+</LinearLayout>

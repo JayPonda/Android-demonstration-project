@@ -29,6 +29,7 @@
             android:name=".SendSmsDemoActivity"
             android:exported="false" />
         <activity
+            android:theme="@style/Theme.AppCompat.Light.NoActionBar"
             android:name=".SendEmailDemoActivity"
             android:exported="false" />
         <activity

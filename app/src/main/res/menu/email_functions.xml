@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <item
+        android:title="@string/cancel"
+        android:icon="@drawable/ic_baseline_cancel_24"
+        app:showAsAction="withText"
+        android:id="@+id/cancel_email"/>
+
+    <item
+        android:title="@string/draft"
+        app:showAsAction="ifRoom"
+        android:icon="@drawable/ic_baseline_drafts_24"
+        android:id="@+id/draft_email"/>
+
+    <item
+        android:title="@string/send"
+        app:showAsAction="always"
+        android:icon="@drawable/ic_baseline_send_24"
+        android:id="@+id/send_email"/>
+</menu>

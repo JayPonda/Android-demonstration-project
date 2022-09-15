@@ -31,12 +31,12 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
             Map.entry(R.id.practical04, TodoListDemoActivity.class),
             Map.entry(R.id.practical05, RecyclerViewDemoActivity.class),
             Map.entry(R.id.practical06, ScrollViewDemoActivity.class),
-            Map.entry(R.id.practical07, DialogMessageDemoActivity.class),
-            Map.entry(R.id.practical08, DialogMessageDemoActivity.class),
-            Map.entry(R.id.practical09, DialogMessageDemoActivity.class),
-            Map.entry(R.id.practical10, DialogMessageDemoActivity.class),
-            Map.entry(R.id.practical11, DialogMessageDemoActivity.class),
-            Map.entry(R.id.practical12, DialogMessageDemoActivity.class)
+            Map.entry(R.id.practical07, SendEmailDemoActivity.class),
+            Map.entry(R.id.practical08, SendSmsDemoActivity.class),
+            Map.entry(R.id.practical09, SharedPreferencesDemoActivity.class),
+            Map.entry(R.id.practical10, FireBaseDemoActivity.class),
+            Map.entry(R.id.practical11, LocalNotificationDemoActivity.class),
+            Map.entry(R.id.practical12, WebViewDemoActivity.class)
     );
 
     @Override
