@@ -6,10 +6,12 @@ import android.annotation.SuppressLint;
 import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
+import android.view.LayoutInflater;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.widget.Toast;
 
+import com.demo.labpracticals.HandleEmailActivity.HandleEmilStack;
 import com.demo.labpracticals.databinding.ActivitySendEmailDemoBinding;
 
 import java.time.LocalDateTime;
@@ -20,18 +22,26 @@ public class SendEmailDemoActivity extends AppCompatActivity {
 
     ActivitySendEmailDemoBinding binding;
     Toast toast;
+    LayoutInflater layoutInflater;
+    HandleEmilStack handleEmilStack;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         binding = ActivitySendEmailDemoBinding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());
+        layoutInflater = LayoutInflater.from(this);
+        handleEmilStack = new HandleEmilStack(layoutInflater, R.layout.new_email_row_templete, binding.receiverEmailGroup, this);
 
         DateTimeFormatter dtf = DateTimeFormatter.ofPattern("yyyy/MM/dd HH:mm:ss");
         LocalDateTime now = LocalDateTime.now();
         binding.customToolBar.setSubtitle(dtf.format(now));
-
         setSupportActionBar(binding.customToolBar);
+
+        handleEmilStack.addNewInstOfMail();
+
+
     }
 
     @Override
@@ -52,6 +62,7 @@ public class SendEmailDemoActivity extends AppCompatActivity {
                 draftEmail();
                 return true;
             default:
+                finish();
                 return super.onOptionsItemSelected(item);
         }
     }
@@ -63,11 +74,11 @@ public class SendEmailDemoActivity extends AppCompatActivity {
     @SuppressLint("QueryPermissionsNeeded")
     private void sendEmail() {
 //        String sEmail = binding.senderEmail.getText().toString();
-        String rEmail = binding.receiverEmail.getText().toString();
+        String[] rEmail = handleEmilStack.getEmail();
         String subject = binding.emailSubject.getText().toString();
         String body = binding.emailBody.getText().toString();
 
-        if(rEmail.isEmpty())
+        if(rEmail.length == 0)
             setToast("Receiver mail address is missing");
 //        else if(sEmail.isEmpty())
 //            setToast("Sender mail address is missing");
@@ -80,7 +91,7 @@ public class SendEmailDemoActivity extends AppCompatActivity {
 
 
             Intent intent = new Intent(Intent.ACTION_SENDTO);
-            intent.putExtra(Intent.EXTRA_EMAIL, new String[]{rEmail});
+            intent.putExtra(Intent.EXTRA_EMAIL, rEmail);
             intent.putExtra(Intent.EXTRA_SUBJECT, subject);
             intent.putExtra(Intent.EXTRA_TEXT, body);
             intent.setData(Uri.parse("mailto:"));

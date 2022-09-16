@@ -15,9 +15,11 @@
         app:subtitle="today's date"
         app:title="status"
         android:elevation="@dimen/small_padding"
+        android:backgroundTint="@color/purple_200"
         app:titleTextColor="@color/purple_500" />
 
     <TableLayout
+        android:id="@+id/tableTemp"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:padding="@dimen/general_padding"
@@ -65,29 +67,17 @@
                 android:text="@string/cc"
                 android:textSize="16sp" />
 
-            <EditText
-                android:id="@+id/receiverEmail"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:layout_marginStart="@dimen/general_padding"
+            <LinearLayout
+                android:id="@+id/receiverEmailGroup"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:ems="10"
-                android:hint="@string/Receiver_email"
-                android:inputType="textEmailAddress"
                 android:minHeight="@dimen/min_height"
-                android:textColorHint="#757575"
-                android:autofillHints="emailAddress"
-                android:importantForAutofill="noExcludeDescendants"/>
+                android:orientation="vertical">
 
-            <ImageButton
-                android:id="@+id/VerifyEmail"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:backgroundTint="#E8E8E8"
-                android:contentDescription="@string/add_or_remove_cc"
-                app:srcCompat="@drawable/ic_baseline_verified_user_24"
-                app:tint="@color/teal_700"
-                tools:ignore="ImageContrastCheck" />
+            </LinearLayout>
+
+
         </TableRow>
 
         <TableRow
@@ -127,6 +117,7 @@
                 android:id="@+id/emailBody"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
+                android:layout_span="2"
                 android:layout_weight="1"
                 android:gravity="start|top"
                 android:maxLines="40"
