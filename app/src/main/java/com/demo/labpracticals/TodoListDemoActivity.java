@@ -64,6 +64,10 @@ public class TodoListDemoActivity extends AppCompatActivity {
 
         // Delete
         binding.listViewTodos.setOnItemLongClickListener((parent, view, position, id) -> {
+            if(isUpdate){
+                Toast.makeText(this, "please complete your edit task", Toast.LENGTH_SHORT).show();
+                return true;
+            }
             AlertDialog.Builder alertBuilder = new AlertDialog.Builder(this);
             alertBuilder.setTitle("Delete Alert")
                     .setMessage("are you sure, you want to delete this item?")
