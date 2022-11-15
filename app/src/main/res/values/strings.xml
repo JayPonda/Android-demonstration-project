@@ -56,6 +56,13 @@
     <!-- set email state -->
         <string name="add_email">add_email</string>
         <string name="remove_email">remove_email</string>
+    <string name="enter_any_string">enter any string</string>
+    <string name="enter_any_signed_number">enter any signed number</string>
+    <string name="name">Name:</string>
+    <string name="number">Number:</string>
+    <string name="load">load</string>
+    <string name="clear">reset</string>
+    <string name="save">save</string>
 
     <!-- practical 3: List View String -->
     <string-array name="animalList">
