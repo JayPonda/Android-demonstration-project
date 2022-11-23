@@ -48,6 +48,33 @@
             <menu>
 
                 <item
+                    android:id="@+id/practical09"
+                    android:icon="@drawable/ic_baseline_storage_24"
+                    android:title="@string/shared_preferences"/>
+
+                <item
+                    android:id="@+id/practical11"
+                    android:icon="@drawable/ic_baseline_message_24"
+                    android:title="@string/local_notification"/>
+
+                <item
+                    android:id="@+id/practical12"
+                    android:icon="@drawable/ic_baseline_web_24"
+                    android:title="@string/web_view"/>
+
+            </menu>
+        </item>
+    </group>
+
+
+
+    <group android:checkableBehavior="single">
+
+        <item android:title="@string/communication" >
+
+            <menu>
+
+                <item
                     android:id="@+id/practical07"
                     android:icon="@drawable/ic_baseline_email_24"
                     android:title="@string/send_email"/>
@@ -58,11 +85,6 @@
                     android:title="@string/send_sms"/>
 
                 <item
-                    android:id="@+id/practical09"
-                    android:icon="@drawable/ic_baseline_storage_24"
-                    android:title="@string/shared_preferences"/>
-
-                <item
                     android:id="@+id/practical10"
                     android:icon="@drawable/ic_baseline_local_fire_department_24"
                     android:title="@string/firebase_example"/>
@@ -70,15 +92,5 @@
             </menu>
         </item>
     </group>
-
-    <item
-        android:id="@+id/practical11"
-        android:icon="@drawable/ic_baseline_message_24"
-        android:title="@string/local_notification"/>
-
-    <item
-        android:id="@+id/practical12"
-        android:icon="@drawable/ic_baseline_web_24"
-        android:title="@string/web_view"/>
 
 </menu>

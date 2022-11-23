@@ -12,7 +12,7 @@
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="10dp"
-        android:hint="Enter notification message"
+        android:hint="@string/enterNotificationMessage"
         app:counterEnabled="true"
         app:counterMaxLength="75"
         app:layout_constraintEnd_toEndOf="parent"
@@ -53,7 +53,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="10dp"
-        android:hint="Enter notification description"
+        android:hint="@string/enterNotificationDescription"
         android:inputType="textMultiLine"
         android:minHeight="48dp"
         android:paddingHorizontal="15dp"
@@ -66,7 +66,7 @@
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="10dp"
-        android:text="create Notification"
+        android:text="@string/create_notification"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/bigEditText" />
@@ -75,7 +75,7 @@
         android:id="@+id/clearAllNotification"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:text="Clear All notification"
+        android:text="@string/clear_all_notification"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/notify" />
@@ -86,7 +86,7 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="10dp"
         android:minHeight="48dp"
-        android:text="show additional settings"
+        android:text="@string/show_additional_settings"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/clearAllNotification" />
 
@@ -113,7 +113,7 @@
                 android:layout_height="wrap_content"
                 android:layout_margin="5dp"
                 android:minHeight="48dp"
-                android:text="show descriptive message" />
+                android:text="@string/show_descriptive_message" />
 
             <com.google.android.material.switchmaterial.SwitchMaterial
                 android:id="@+id/showTimedNotification"
@@ -121,14 +121,14 @@
                 android:layout_height="wrap_content"
                 android:layout_margin="5dp"
                 android:minHeight="48dp"
-                android:text="show timed notification" />
+                android:text="@string/show_timed_notification" />
 
             <com.google.android.material.switchmaterial.SwitchMaterial
                 android:id="@+id/TapActionswitch"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_margin="5dp"
-                android:text="add Tap Action"
+                android:text="@string/add_tap_action"
                 tools:ignore="TouchTargetSizeCheck" />
 
             <com.google.android.material.switchmaterial.SwitchMaterial
@@ -137,7 +137,7 @@
                 android:layout_height="wrap_content"
                 android:layout_margin="5dp"
                 android:minHeight="48dp"
-                android:text="update on change" />
+                android:text="@string/update_on_change" />
 
             <com.google.android.material.switchmaterial.SwitchMaterial
                 android:id="@+id/singleNotificationSwitch"
@@ -145,7 +145,7 @@
                 android:layout_height="wrap_content"
                 android:layout_margin="5dp"
                 android:minHeight="48dp"
-                android:text="Show last notification Only" />
+                android:text="@string/show_last_notification_only" />
 
             <com.google.android.material.switchmaterial.SwitchMaterial
                 android:id="@+id/showAdditionalImage"
@@ -153,7 +153,7 @@
                 android:layout_height="wrap_content"
                 android:layout_margin="5dp"
                 android:minHeight="48dp"
-                android:text="show additional image" />
+                android:text="@string/show_additional_image" />
 
             <com.google.android.material.switchmaterial.SwitchMaterial
                 android:id="@+id/showAdditionalImageExpandable"
@@ -161,7 +161,7 @@
                 android:layout_height="wrap_content"
                 android:layout_margin="5dp"
                 android:minHeight="48dp"
-                android:text="show image expandable" />
+                android:text="@string/show_image_expandable" />
 
         </LinearLayout>
     </ScrollView>
