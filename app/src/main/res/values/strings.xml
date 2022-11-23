@@ -63,6 +63,8 @@
     <string name="load">load</string>
     <string name="clear">reset</string>
     <string name="save">save</string>
+    <string name="floatingActionBarButton">floatingActionBarButton</string>
+    <string name="enter_notification_title">Enter notification title</string>
 
     <!-- practical 3: List View String -->
     <string-array name="animalList">

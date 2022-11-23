@@ -61,4 +61,8 @@ public class StaticData {
        System.out.println(Arrays.toString(animalList));
        return shuffleAnimalList(iteration);
     }
+
+    public int getListLength(){
+        return this.animalList.length;
+    }
 }
