@@ -6,7 +6,6 @@ import android.app.NotificationChannel;
 import android.app.NotificationManager;
 import android.content.Intent;
 import android.os.Bundle;
-import android.view.View;
 import android.widget.Toast;
 
 import com.demo.labpracticals.databinding.ActivityLocalNotificationDemoBinding;
@@ -54,15 +53,6 @@ public class LocalNotificationDemoActivity extends AppCompatActivity {
         channel.setDescription("My notification channel description");
         notificationManager.createNotificationChannel(channel);
 
-        binding.showAdditionalSettings.setOnCheckedChangeListener(
-                (v, isChecked) -> {
-                    if(isChecked)
-                        binding.additionalSet.setVisibility(View.VISIBLE);
-                    else
-                        binding.additionalSet.setVisibility(View.GONE);
-                }
-        );
-
         binding.notify.setOnClickListener(
                 v -> {
                     String[] str = getText();
@@ -86,6 +76,11 @@ public class LocalNotificationDemoActivity extends AppCompatActivity {
                                     binding.TapActionswitch.isChecked() ? new Intent(this, MainActivity.class): null)
                                     .getBuilder();
                         }
+
+                        if (binding.singleNotificationSwitch.isChecked()){
+                            binding.clearAllNotification.performClick();
+                        }
+
                         notificationManager.notify( binding.UpdateOnChangeswitch.isChecked() ? notificationId : notificationId++, builder.build());
                     }
                 }
@@ -110,17 +105,3 @@ public class LocalNotificationDemoActivity extends AppCompatActivity {
         );
     }
 }
-
-/*
-* - title
-* - des
-* - big text
-* - remove
-* + icon
-* + image
-* + small
-* style
-* add tap
-* show updates
-* time out
-*/

@@ -1,30 +1,30 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:orientation="vertical"
     android:padding="@dimen/header_padding"
     tools:context=".LocalNotificationDemoActivity">
 
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
     <com.google.android.material.textfield.TextInputLayout
         android:id="@+id/notificationSmallText"
-        android:layout_width="0dp"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="10dp"
         android:hint="@string/enterNotificationMessage"
         app:counterEnabled="true"
-        app:counterMaxLength="75"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/notificationTitle">
+        app:counterMaxLength="75">
 
         <com.google.android.material.textfield.TextInputEditText
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
+            android:layout_height="wrap_content" />
 
     </com.google.android.material.textfield.TextInputLayout>
 
@@ -34,10 +34,7 @@
         android:layout_height="wrap_content"
         android:hint="@string/enter_notification_title"
         app:counterEnabled="true"
-        app:counterMaxLength="20"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent">
+        app:counterMaxLength="20">
 
         <com.google.android.material.textfield.TextInputEditText
             android:layout_width="match_parent"
@@ -57,113 +54,76 @@
         android:inputType="textMultiLine"
         android:minHeight="48dp"
         android:paddingHorizontal="15dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/notificationSmallText" />
+        android:textColorHint="#757575" />
 
     <Button
         android:id="@+id/notify"
-        android:layout_width="0dp"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="10dp"
-        android:text="@string/create_notification"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/bigEditText" />
+        android:text="@string/create_notification" />
 
     <Button
         android:id="@+id/clearAllNotification"
-        android:layout_width="0dp"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="@string/clear_all_notification"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/notify" />
+        android:text="@string/clear_all_notification" />
+
+
+        <com.google.android.material.switchmaterial.SwitchMaterial
+        android:id="@+id/showBigText"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="5dp"
+        android:minHeight="48dp"
+        android:text="@string/show_descriptive_message" />
 
     <com.google.android.material.switchmaterial.SwitchMaterial
-        android:id="@+id/showAdditionalSettings"
-        android:layout_width="wrap_content"
+        android:id="@+id/showTimedNotification"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="10dp"
+        android:layout_margin="5dp"
         android:minHeight="48dp"
-        android:text="@string/show_additional_settings"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/clearAllNotification" />
+        android:text="@string/show_timed_notification" />
 
-    <ScrollView
-        android:id="@+id/additionalSet"
-        android:visibility="gone"
-        android:layout_width="0dp"
-        android:layout_height="0dp"
-        android:layout_marginTop="10dp"
-        android:orientation="vertical"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/showAdditionalSettings">
+    <com.google.android.material.switchmaterial.SwitchMaterial
+        android:id="@+id/TapActionswitch"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="5dp"
+        android:text="@string/add_tap_action"
+        tools:ignore="TouchTargetSizeCheck" />
 
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="vertical">
+    <com.google.android.material.switchmaterial.SwitchMaterial
+        android:id="@+id/UpdateOnChangeswitch"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="5dp"
+        android:minHeight="48dp"
+        android:text="@string/update_on_change" />
 
-            <com.google.android.material.switchmaterial.SwitchMaterial
-                android:id="@+id/showBigText"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_margin="5dp"
-                android:minHeight="48dp"
-                android:text="@string/show_descriptive_message" />
+    <com.google.android.material.switchmaterial.SwitchMaterial
+        android:id="@+id/singleNotificationSwitch"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="5dp"
+        android:minHeight="48dp"
+        android:text="@string/show_last_notification_only" />
 
-            <com.google.android.material.switchmaterial.SwitchMaterial
-                android:id="@+id/showTimedNotification"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_margin="5dp"
-                android:minHeight="48dp"
-                android:text="@string/show_timed_notification" />
+    <com.google.android.material.switchmaterial.SwitchMaterial
+        android:id="@+id/showAdditionalImage"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="5dp"
+        android:minHeight="48dp"
+        android:text="@string/show_additional_image" />
 
-            <com.google.android.material.switchmaterial.SwitchMaterial
-                android:id="@+id/TapActionswitch"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_margin="5dp"
-                android:text="@string/add_tap_action"
-                tools:ignore="TouchTargetSizeCheck" />
-
-            <com.google.android.material.switchmaterial.SwitchMaterial
-                android:id="@+id/UpdateOnChangeswitch"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_margin="5dp"
-                android:minHeight="48dp"
-                android:text="@string/update_on_change" />
-
-            <com.google.android.material.switchmaterial.SwitchMaterial
-                android:id="@+id/singleNotificationSwitch"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_margin="5dp"
-                android:minHeight="48dp"
-                android:text="@string/show_last_notification_only" />
-
-            <com.google.android.material.switchmaterial.SwitchMaterial
-                android:id="@+id/showAdditionalImage"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_margin="5dp"
-                android:minHeight="48dp"
-                android:text="@string/show_additional_image" />
-
-            <com.google.android.material.switchmaterial.SwitchMaterial
-                android:id="@+id/showAdditionalImageExpandable"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_margin="5dp"
-                android:minHeight="48dp"
-                android:text="@string/show_image_expandable" />
-
-        </LinearLayout>
-    </ScrollView>
-
-</androidx.constraintlayout.widget.ConstraintLayout>
+    <com.google.android.material.switchmaterial.SwitchMaterial
+        android:id="@+id/showAdditionalImageExpandable"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="5dp"
+        android:minHeight="48dp"
+        android:text="@string/show_image_expandable" />
+    </LinearLayout>
+</ScrollView>
