@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="@dimen/general_padding"
+    tools:context=".TextToSpeakDemoActivity">
+
+    <EditText
+        android:id="@+id/sample"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:autofillHints="none"
+        android:ems="10"
+        android:hint="@string/sample_text_for_demo_english"
+        android:inputType="textPersonName"
+        android:minHeight="48dp"
+        android:textColorHint="#757575" />
+
+    <Spinner
+        android:id="@+id/speakType"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:contentDescription="@string/speakType"
+        android:minHeight="48dp" />
+
+    <Spinner
+        android:id="@+id/speakRate"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:contentDescription="@string/speakRate"
+        android:minHeight="48dp" />
+
+    <Button
+        android:id="@+id/speak"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/header_padding"
+        android:text="@string/speak" />
+
+</LinearLayout>
