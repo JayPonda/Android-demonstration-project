@@ -26,7 +26,7 @@ public class NotificationBuilder {
         this.DELAY = DELAY;
     }
 
-    public NotificationObject generateNotificationBuilderObj(String[] str, Context context, boolean isTimeOut, boolean isBig, boolean isLargeImage, Intent intent){
+    public NotificationCompat.Builder generateNotificationBuilder(String[] str, Context context, boolean isTimeOut, boolean isBig, boolean isLargeImage, boolean isProcessContinue, Intent intent){
         NotificationCompat.Builder newBuilder =  new NotificationCompat.Builder(context, CHANNEL_ID )
                 .setContentTitle(str[0])
                 .setContentText(str[1])
@@ -40,12 +40,15 @@ public class NotificationBuilder {
                     .bigText(str[2]));
         }
 
+        if(isProcessContinue)
+            newBuilder.setOngoing(true);
+        else
+            if(isTimeOut)
+                newBuilder.setTimeoutAfter(DELAY);
+
         if(intent != null)
             newBuilder.setAutoCancel(true)
                     .setContentIntent(PendingIntent.getActivity(context, 0, intent, PendingIntent.FLAG_IMMUTABLE));
-
-        if(isTimeOut)
-            newBuilder.setTimeoutAfter(DELAY);
 
         if(isLargeImage){
 
@@ -53,12 +56,11 @@ public class NotificationBuilder {
             newBuilder.setLargeIcon(BitmapFactory.decodeResource(context.getResources(), animal[randomVal].getImgRes()));
         }
 
-        return new NotificationObject(CHANNEL_ID, newBuilder, isTimeOut, intent != null, isLargeImage);
+        return newBuilder;
     }
 
-    public NotificationObject generateNotificationBuilderObjExpandable(String[] str, Context context, boolean isTimeOut, boolean isLargeImage, Intent intent){
-        NotificationObject notificationObject= generateNotificationBuilderObj(str, context, isTimeOut, false, isLargeImage, intent);
-        NotificationCompat.Builder newBuilder = notificationObject.getBuilder();
+    public NotificationCompat.Builder generateNotificationBuilderObjExpandable(String[] str, Context context, boolean isTimeOut, boolean isLargeImage, boolean isProcessContinue, Intent intent){
+        NotificationCompat.Builder newBuilder = generateNotificationBuilder(str, context, isTimeOut, false, isLargeImage, isProcessContinue, intent);
 
         int randomVal = (new Random()).nextInt(staticData.getListLength());
 
@@ -70,7 +72,7 @@ public class NotificationBuilder {
 
         newBuilder.setStyle(imageBuild);
 
-        return new NotificationObject(CHANNEL_ID, newBuilder, isTimeOut, intent != null, isLargeImage);
+        return newBuilder;
     }
 
 

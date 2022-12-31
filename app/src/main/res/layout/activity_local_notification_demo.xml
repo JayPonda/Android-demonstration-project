@@ -5,15 +5,32 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    android:padding="@dimen/header_padding"
     tools:context=".LocalNotificationDemoActivity">
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:padding="@dimen/header_padding"
         android:orientation="vertical">
 
-    <com.google.android.material.textfield.TextInputLayout
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/notificationTitle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="@string/enter_notification_title"
+            app:counterEnabled="true"
+            app:counterMaxLength="20">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
         android:id="@+id/notificationSmallText"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -28,24 +45,7 @@
 
     </com.google.android.material.textfield.TextInputLayout>
 
-    <com.google.android.material.textfield.TextInputLayout
-        android:id="@+id/notificationTitle"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:hint="@string/enter_notification_title"
-        app:counterEnabled="true"
-        app:counterMaxLength="20">
-
         <com.google.android.material.textfield.TextInputEditText
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
-
-    </com.google.android.material.textfield.TextInputLayout>
-
-    <com.google.android.material.textfield.TextInputEditText
         android:id="@+id/bigEditText"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -94,7 +94,21 @@
         android:text="@string/add_tap_action"
         tools:ignore="TouchTargetSizeCheck" />
 
-    <com.google.android.material.switchmaterial.SwitchMaterial
+        <com.google.android.material.switchmaterial.SwitchMaterial
+            android:id="@+id/continueProcessSwitch"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="5dp"
+            android:text="@string/continue_process"
+            tools:ignore="TouchTargetSizeCheck" />
+
+        <Button
+            android:id="@+id/endProcess"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/process_end" />
+
+        <com.google.android.material.switchmaterial.SwitchMaterial
         android:id="@+id/UpdateOnChangeswitch"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -125,5 +139,6 @@
         android:layout_margin="5dp"
         android:minHeight="48dp"
         android:text="@string/show_image_expandable" />
+
     </LinearLayout>
 </ScrollView>
