@@ -36,7 +36,8 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
             Map.entry(R.id.practical09, SharedPreferencesDemoActivity.class),
             Map.entry(R.id.practical10, FireBaseDemoActivity.class),
             Map.entry(R.id.practical11, LocalNotificationDemoActivity.class),
-            Map.entry(R.id.practical12, WebViewDemoActivity.class)
+            Map.entry(R.id.practical12, WebViewDemoActivity.class),
+            Map.entry(R.id.practical13, TextToSpeakDemoActivity.class)
     );
 
     @Override

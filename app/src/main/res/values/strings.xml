@@ -78,8 +78,6 @@
     <string name="show_additional_image">show additional image</string>
     <string name="add_tap_action">add Tap Action</string>
     <string name="communication">communication</string>
-    <string name="continue_process">continue process</string>
-    <string name="process_end">process end</string>
 
     <!-- practical 3: List View String -->
     <string-array name="animalList">

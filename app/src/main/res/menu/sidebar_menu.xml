@@ -62,6 +62,11 @@
                     android:icon="@drawable/ic_baseline_web_24"
                     android:title="@string/web_view"/>
 
+                <item
+                    android:id="@+id/practical13"
+                    android:icon="@drawable/ic_baseline_speaker_group_24"
+                    android:title="@string/text_to_speak"/>
+
             </menu>
         </item>
     </group>
