@@ -4,8 +4,6 @@
     <string name="Scroll_view_desc">scroll view description</string>
 
     <!-- main activity drawer item string -->
-    <string name="layouts_and_scrollable">layouts and scrollable</string>
-    <string name="services_and_storage">services and storage</string>
     <string name="dialog_message">Dialog Message</string>
     <string name="grid_view">grid view</string>
     <string name="list_view">list view</string>
@@ -18,6 +16,11 @@
     <string name="firebase_example">firebase example</string>
     <string name="local_notification">local notification</string>
     <string name="web_view">web view</string>
+
+    <!-- side bar group name -->
+    <string name="layouts_and_scrollable">layouts and scrollable</string>
+    <string name="services_and_storage">storage and services</string>
+    <string name="communication">communication</string>
 
     <!-- drawer header strings -->
     <string name="sidebar_image">sidebar image</string>
@@ -35,50 +38,6 @@
     <string name="cancel">Cancel</string>
     <string name="the_other_one">Other</string>
 
-    <!-- practical 4: todoList -->
-    <string name="add">Add</string>
-    <string name="edit">Edit</string>
-    <string name="here_is_my_todo">here is my todo</string>
-
-    <!-- practical 5: send email -->
-    <string name="sender_email">Email</string>
-    <string name="cc">Cc:</string>
-    <string name="email">Email:</string>
-    <string name="sender_email_com">sender@email.com</string>
-    <string name="Receiver_email" >receiver@emial.com</string>
-    <string name="subject">subject:</string>
-    <string name="subject_of_this_email">subject of this email</string>
-    <string name="add_or_remove_cc">add or remove CC</string>
-    <string name="dear_sir_n">dear sir, \n…</string>
-    <string name="draft">draft</string>
-    <string name="send">send</string>
-
-    <!-- set email state -->
-    <string name="add_email">add_email</string>
-    <string name="remove_email">remove_email</string>
-    <string name="enter_any_string">enter any string</string>
-    <string name="enter_any_signed_number">enter any signed number</string>
-    <string name="name">Name:</string>
-    <string name="number">Number:</string>
-    <string name="load">load</string>
-    <string name="clear">reset</string>
-    <string name="save">save</string>
-    <string name="floatingActionBarButton">floatingActionBarButton</string>
-    <string name="enter_notification_title">Enter notification title</string>
-    <string name="enterNotificationMessage">Enter notification message</string>
-    <string name="enterNotificationDescription">Enter notification description</string>
-    <string name="create_notification">create Notification</string>
-    <string name="clear_all_notification">Clear All notification</string>
-    <string name="show_additional_settings">show additional settings</string>
-    <string name="show_descriptive_message">show descriptive message</string>
-    <string name="show_timed_notification">show timed notification</string>
-    <string name="update_on_change">update on change</string>
-    <string name="show_last_notification_only">Show last notification Only</string>
-    <string name="show_image_expandable">show image expandable</string>
-    <string name="show_additional_image">show additional image</string>
-    <string name="add_tap_action">add Tap Action</string>
-    <string name="communication">communication</string>
-
     <!-- practical 3: List View String -->
     <string-array name="animalList">
         <item>Deer</item>
@@ -94,6 +53,44 @@
         <item>Chameleon</item>
         <item>Chimpanzee</item>
     </string-array>
+
+    <!-- practical 4: todoList -->
+    <string name="add">Add</string>
+    <string name="edit">Edit</string>
+    <string name="here_is_my_todo">here is my todo</string>
+
+    <!-- practical 09: shared preference -->
+    <string name="enter_any_string">enter any string</string>
+    <string name="enter_any_signed_number">enter any signed number</string>
+    <string name="name">Name:</string>
+    <string name="number">Number:</string>
+    <string name="load">load</string>
+    <string name="clear">reset</string>
+    <string name="save">save</string>
+
+    <!-- practical 11: local notification -->
+    <string name="enter_notification_title">Enter notification title</string>
+    <string name="enterNotificationMessage">Enter notification message</string>
+    <string name="enterNotificationDescription">Enter notification description</string>
+    <string name="create_notification">create Notification</string>
+    <string name="clear_all_notification">Clear All notification</string>
+    <string name="show_additional_settings">show additional settings</string>
+    <string name="show_descriptive_message">show descriptive message</string>
+    <string name="show_timed_notification">show timed notification</string>
+    <string name="update_on_change">update on change</string>
+    <string name="show_last_notification_only">Show last notification Only</string>
+    <string name="show_image_expandable">show image expandable</string>
+    <string name="show_additional_image">show additional image</string>
+    <string name="add_tap_action">add Tap Action</string>
+    <string name="continue_process">on-going process</string>
+    <string name="clear_all_notification_except_ongoing">clear all notification except onGoing</string>
+
+    <!-- practical 13: text to speak -->
+    <string name="text_to_speak">text to speak</string>
+    <string name="sample_text_for_demo_english">sample text for demo</string>
+    <string name="speak">Speak</string>
+    <string name="speakType">speak type</string>
+    <string name="speakRate">speak rate</string>
 
 
 </resources>

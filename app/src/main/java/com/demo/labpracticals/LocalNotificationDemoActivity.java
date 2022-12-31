@@ -7,7 +7,7 @@ import android.app.NotificationChannel;
 import android.app.NotificationManager;
 import android.content.Intent;
 import android.os.Bundle;
-import android.util.Pair;
+import android.util.Log;
 import android.widget.Toast;
 
 import com.demo.labpracticals.databinding.ActivityLocalNotificationDemoBinding;
@@ -20,25 +20,10 @@ public class LocalNotificationDemoActivity extends AppCompatActivity {
 
     private ActivityLocalNotificationDemoBinding binding;
     private NotificationCompat.Builder builder;
-    private int notificationId = 1;
+    private int notificationId = 1000;
     private NotificationManager notificationManager;
     public static final String CHANNEL_ID = "myChannel";
-    private final ArrayList<Pair<Integer,NotificationCompat.Builder>> continueQueue = new ArrayList<>();
-
-    private void addEntry(int id, NotificationCompat.Builder notificationObject){
-        continueQueue.add(new Pair<>(id, notificationObject) );
-    }
-
-    private Boolean removeEntry(){
-        if(!continueQueue.isEmpty()){
-            Pair<Integer, NotificationCompat.Builder> equ = continueQueue.get(0);
-            equ.second.setOngoing(false);
-            notificationManager.cancel(equ.first);
-            continueQueue.remove(0);
-        }
-
-        return continueQueue.isEmpty();
-    }
+    private final ArrayList<Integer> notificationIds = new ArrayList<>();
 
     private String[] getText(){
         String title = Objects.requireNonNull(binding.notificationTitle.getEditText()).getText().toString().trim();
@@ -57,7 +42,6 @@ public class LocalNotificationDemoActivity extends AppCompatActivity {
         return true;
     }
 
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -75,7 +59,7 @@ public class LocalNotificationDemoActivity extends AppCompatActivity {
                 v -> {
                     String[] str = getText();
                     if(handleEmptyEditText(str)){
-                        int newNotificationID = binding.UpdateOnChangeswitch.isChecked() ? notificationId : notificationId++;
+                        int newNotificationID = binding.UpdateOnChangeswitch.isChecked() ? notificationId : ++notificationId;
                         if(binding.showAdditionalImage.isChecked() && binding.showAdditionalImageExpandable.isChecked()){
                             builder = buildBuilder.generateNotificationBuilderObjExpandable(
                                     str,
@@ -96,42 +80,46 @@ public class LocalNotificationDemoActivity extends AppCompatActivity {
                                     binding.TapActionswitch.isChecked() ? new Intent(this, MainActivity.class): null);
                         }
 
-                        if(binding.continueProcessSwitch.isChecked())
-                            addEntry(newNotificationID, builder);
+                        if(!binding.continueProcessSwitch.isChecked()){
+                            notificationIds.add(newNotificationID);
+                            Log.i("myTag", notificationIds.toString());
+                        }
+                        else
+                            Log.i("myTag", String.valueOf(notificationId));
+
 
                         if (binding.singleNotificationSwitch.isChecked()){
                             binding.clearAllNotification.performClick();
                         }
 
-                        notificationManager.notify( newNotificationID, builder.build());
+                        notificationManager.notify( newNotificationID, builder.build() );
                     }
-
-                    binding.endProcess.setEnabled(!continueQueue.isEmpty());
                 }
         );
 
-        binding.endProcess.setOnClickListener(
-               v -> v.setEnabled(!removeEntry())
-        );
-
-        binding.endProcess.performClick();
 
         binding.clearAllNotification.setOnClickListener(
-                v -> notificationManager.cancelAll()
+                v -> {
+                    notificationManager.cancelAll();
+                    notificationIds.clear();
+                }
+        );
+
+        binding.clearNonOnGoingNotification.setOnClickListener(
+                v -> {
+                    notificationIds.forEach(integer -> notificationManager.cancel(integer));
+                    notificationIds.clear();
+                }
         );
 
         binding.showBigText.setOnCheckedChangeListener(
-                    (v, isChecked) ->{
-                        binding.showAdditionalImageExpandable.setEnabled(!isChecked);
-                        binding.showAdditionalImageExpandable.setClickable(!isChecked);
-                    }
-                );
+                (v, isChecked) -> binding.showAdditionalImageExpandable.setEnabled(!isChecked)
+        );
 
         binding.showAdditionalImage.setOnCheckedChangeListener(
-                (v, isChecked) -> {
-                    binding.showAdditionalImageExpandable.setEnabled(isChecked);
-                    binding.showAdditionalImageExpandable.setClickable(isChecked);
-                }
+                (v, isChecked) -> binding.showAdditionalImageExpandable.setEnabled(isChecked)
         );
+
+        binding.showAdditionalImageExpandable.setEnabled(false);
     }
 }

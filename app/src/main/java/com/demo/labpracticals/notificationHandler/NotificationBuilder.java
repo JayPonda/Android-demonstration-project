@@ -74,6 +74,4 @@ public class NotificationBuilder {
 
         return newBuilder;
     }
-
-
 }

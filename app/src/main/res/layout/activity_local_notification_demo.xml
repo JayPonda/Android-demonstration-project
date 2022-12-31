@@ -63,12 +63,18 @@
         android:layout_marginTop="10dp"
         android:text="@string/create_notification" />
 
-    <Button
-        android:id="@+id/clearAllNotification"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="@string/clear_all_notification" />
+        <Button
+            android:id="@+id/clearNonOnGoingNotification"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/clear_all_notification_except_ongoing" />
 
+
+        <Button
+            android:id="@+id/clearAllNotification"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/clear_all_notification" />
 
         <com.google.android.material.switchmaterial.SwitchMaterial
         android:id="@+id/showBigText"
@@ -101,12 +107,6 @@
             android:layout_margin="5dp"
             android:text="@string/continue_process"
             tools:ignore="TouchTargetSizeCheck" />
-
-        <Button
-            android:id="@+id/endProcess"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="@string/process_end" />
 
         <com.google.android.material.switchmaterial.SwitchMaterial
         android:id="@+id/UpdateOnChangeswitch"
